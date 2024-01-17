@@ -1,0 +1,53 @@
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  &__menu {
+    @media (width < 40em) {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: hsl(254, 100%, 23%);
+      padding: 1.5rem;
+    }
+  }
+
+  &__close {
+    display: block;
+    margin-inline-start: auto;
+    margin-block-end: 8rem;
+
+    img {
+      width: 2.5rem;
+    }
+  }
+
+  &__links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    @media (width < 40em) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}

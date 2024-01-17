@@ -1,0 +1,13 @@
+.cat {
+  display: grid;
+  justify-items: center;
+  padding-block: 2rem;
+
+  img {
+    margin-block-end: 1.5rem;
+  }
+
+  p {
+    max-width: 70ch;
+  }
+}
