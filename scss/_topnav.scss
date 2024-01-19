@@ -2,21 +2,44 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 1rem;
+  padding-block: 1.5rem;
+  background-color: hsla(0, 0%, 0%, 0.75);
 
   button {
     background: none;
     border: none;
     padding: 0;
+
+    @media (width >= 40em) {
+      display: none;
+    }
+  }
+
+  &__open[aria-expanded='true'] {
+    + .topnav__menu {
+      translate: 0;
+
+      @media (prefers-reduced-motion) {
+        opacity: 1;
+      }
+    }
   }
 
   &__menu {
     @media (width < 40em) {
-      display: none;
+      // display: none;
       position: fixed;
       inset: 0;
       background-color: hsl(254, 100%, 23%);
       padding: 1.5rem;
+      translate: 100vw 0;
+      transition: translate 0.5s ease-in-out;
+    }
+
+    @media (prefers-reduced-motion) {
+      translate: 0;
+      opacity: 0;
+      transition: opacity 500ms ease-in-out;
     }
   }
 

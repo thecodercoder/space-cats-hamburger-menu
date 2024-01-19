@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cats in Space</title>
     <link rel="stylesheet" href="/scss/style.css" />
+    <script src="script.js" async></script>
   </head>
   <body>
     <header class="topnav wrapper">
       <h1><a href="/">Cats in Space</a></h1>
       <nav>
-        <button class="topnav__open">
+        <span id="nav-label" hidden>Navigation</span>
+        <button
+          id="btnOpen"
+          class="topnav__open"
+          aria-expanded="false"
+          aria-labelledby="nav-label"
+        >
           <img src="/img/hamburger.svg" alt="" width="40" height="24" />
         </button>
-        <div class="topnav__menu">
-          <button class="topnav__close">
+        <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
+          <button class="topnav__close" id="btnClose">
             <img src="/img/close.svg" alt="" width="28" height="27" />
           </button>
           <ul class="topnav__links">
@@ -34,48 +41,50 @@
         </div>
       </nav>
     </header>
-    <section class="wrapper cat" id="nyancat">
-      <img src="/img/nyancat@2x.png" alt="" width="250" />
-      <h2>Nyancat</h2>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quaerat
-        maxime dignissimos. Ducimus sit sequi nam, aut minus sunt suscipit
-        beatae quis maiores unde, asperiores voluptatum quasi delectus
-        reprehenderit non. Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Ullam quod dolorem blanditiis nesciunt, debitis minima doloremque
-        quam hic. Harum, provident. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Accusantium, dolor quidem excepturi dolores labore
-        fugiat voluptatum porro fugit corrupti explicabo.
-      </p>
-    </section>
-    <section class="wrapper cat" id="catra">
-      <img src="/img/catra-space@2x.png" alt="Catra" width="100" />
-      <h2>Catra</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, nemo quos
-        architecto quaerat enim dicta? Voluptas est dicta enim modi laboriosam,
-        iste tempore corrupti? Ipsam sunt similique, expedita mollitia facere
-        accusamus non aut impedit porro quidem fuga a doloribus, soluta
-        reprehenderit consectetur tenetur aliquid perspiciatis architecto odio.
-        Consectetur, animi soluta? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Ipsam, iste rem? Magnam mollitia distinctio quis,
-        maxime natus sint amet deleniti.
-      </p>
-    </section>
-    <section class="wrapper cat" id="garfield">
-      <img src="/img/garfield-in-space@2x.png" alt="Garfield" width="250" />
-      <h2>Garfield</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iure ex,
-        ea neque, hic assumenda consequuntur odio maxime adipisci dicta
-        voluptatibus ratione exercitationem officiis. Voluptatum voluptas
-        aliquam harum a, placeat porro dolorem iure tempore quia culpa doloribus
-        corporis! Amet possimus consequatur voluptates modi eum nihil optio
-        laudantium a, molestiae, delectus nisi esse, commodi harum dicta ratione
-        assumenda? Hic totam laboriosam iure, quo error assumenda omnis veniam
-        itaque unde accusamus, expedita beatae incidunt nemo suscipit dolores
-        nam aliquid fugit at esse!
-      </p>
-    </section>
+    <main>
+      <section class="wrapper cat" id="nyancat">
+        <img src="/img/nyancat@2x.png" alt="" width="250" />
+        <h2>Nyancat</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quaerat
+          maxime dignissimos. Ducimus sit sequi nam, aut minus sunt suscipit
+          beatae quis maiores unde, asperiores voluptatum quasi delectus
+          reprehenderit non. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Ullam quod dolorem blanditiis nesciunt, debitis minima
+          doloremque quam hic. Harum, provident. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Accusantium, dolor quidem excepturi
+          dolores labore fugiat voluptatum porro fugit corrupti explicabo.
+        </p>
+      </section>
+      <section class="wrapper cat" id="catra">
+        <img src="/img/catra-space@2x.png" alt="Catra" width="100" />
+        <h2>Catra</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, nemo
+          quos architecto quaerat enim dicta? Voluptas est dicta enim modi
+          laboriosam, iste tempore corrupti? Ipsam sunt similique, expedita
+          mollitia facere accusamus non aut impedit porro quidem fuga a
+          doloribus, soluta reprehenderit consectetur tenetur aliquid
+          perspiciatis architecto odio. Consectetur, animi soluta? Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Ipsam, iste rem? Magnam
+          mollitia distinctio quis, maxime natus sint amet deleniti.
+        </p>
+      </section>
+      <section class="wrapper cat" id="garfield">
+        <img src="/img/garfield-in-space@2x.png" alt="Garfield" width="250" />
+        <h2>Garfield</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iure
+          ex, ea neque, hic assumenda consequuntur odio maxime adipisci dicta
+          voluptatibus ratione exercitationem officiis. Voluptatum voluptas
+          aliquam harum a, placeat porro dolorem iure tempore quia culpa
+          doloribus corporis! Amet possimus consequatur voluptates modi eum
+          nihil optio laudantium a, molestiae, delectus nisi esse, commodi harum
+          dicta ratione assumenda? Hic totam laboriosam iure, quo error
+          assumenda omnis veniam itaque unde accusamus, expedita beatae incidunt
+          nemo suscipit dolores nam aliquid fugit at esse!
+        </p>
+      </section>
+    </main>
   </body>
 </html>

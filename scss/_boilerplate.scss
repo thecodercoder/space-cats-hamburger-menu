@@ -8,11 +8,22 @@ body {
   position: relative;
   margin: 0;
   min-height: 100vh;
-  background-color: hsla(0, 0%, 0%, 0.5);
+  background-color: hsl(0, 0%, 0%);
   background-image: url('/img/jeremy-perkins-uhjiu8FjnsQ-unsplash-small.jpg');
-  background-blend-mode: multiply;
   color: #ffffff;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  &:has(.topnav__open[aria-expanded='true']) {
+    overflow-y: hidden;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(hsla(0, 0%, 0%, 0.5) 70%, transparent 110%);
+    z-index: -1;
+  }
 }
 
 img {
@@ -45,6 +56,6 @@ a:active {
 }
 
 .wrapper {
-  width: min(100% - 1.5rem, 56.25rem);
+  width: min(100% - 3rem, 56.25rem);
   margin-inline: auto;
 }

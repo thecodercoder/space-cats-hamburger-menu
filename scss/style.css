@@ -16,11 +16,20 @@ body {
   position: relative;
   margin: 0;
   min-height: 100vh;
-  background-color: hsla(0, 0%, 0%, 0.5);
+  background-color: hsl(0, 0%, 0%);
   background-image: url("/img/jeremy-perkins-uhjiu8FjnsQ-unsplash-small.jpg");
-  background-blend-mode: multiply;
   color: #ffffff;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body:has(.topnav__open[aria-expanded=true]) {
+  overflow-y: hidden;
+}
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(hsla(0, 0%, 0%, 0.5) 70%, transparent 110%);
+  z-index: -1;
 }
 
 img {
@@ -55,7 +64,7 @@ a:active:hover {
 }
 
 .wrapper {
-  width: min(100% - 1.5rem, 56.25rem);
+  width: min(100% - 3rem, 56.25rem);
   margin-inline: auto;
 }
 
@@ -75,20 +84,42 @@ a:active:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 1rem;
+  padding-block: 1.5rem;
+  background-color: hsla(0, 0%, 0%, 0.75);
 }
 .topnav button {
   background: none;
   border: none;
   padding: 0;
 }
+@media (width >= 40em) {
+  .topnav button {
+    display: none;
+  }
+}
+.topnav__open[aria-expanded=true] + .topnav__menu {
+  translate: 0;
+}
+@media (prefers-reduced-motion) {
+  .topnav__open[aria-expanded=true] + .topnav__menu {
+    opacity: 1;
+  }
+}
 @media (width < 40em) {
   .topnav__menu {
-    display: none;
     position: fixed;
     inset: 0;
     background-color: hsl(254, 100%, 23%);
     padding: 1.5rem;
+    translate: 100vw 0;
+    transition: translate 0.5s ease-in-out;
+  }
+}
+@media (prefers-reduced-motion) {
+  .topnav__menu {
+    translate: 0;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
   }
 }
 .topnav__close {
