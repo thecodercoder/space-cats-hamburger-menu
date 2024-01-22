@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   padding-block: 1.5rem;
-  background-color: hsla(0, 0%, 0%, 0.75);
 
   button {
     background: none;
@@ -25,24 +24,6 @@
     }
   }
 
-  &__menu {
-    @media (width < 40em) {
-      // display: none;
-      position: fixed;
-      inset: 0;
-      background-color: hsl(254, 100%, 23%);
-      padding: 1.5rem;
-      translate: 100vw 0;
-      transition: translate 0.5s ease-in-out;
-    }
-
-    @media (prefers-reduced-motion) {
-      translate: 0;
-      opacity: 0;
-      transition: opacity 500ms ease-in-out;
-    }
-  }
-
   &__close {
     display: block;
     margin-inline-start: auto;
@@ -53,12 +34,29 @@
     }
   }
 
+  &__menu {
+    @media (width < 40em) {
+      position: fixed;
+      inset: 0;
+      padding: 1.5rem;
+      background-color: hsl(256, 100%, 33%);
+      translate: 100vw 0;
+      transition: translate 0.5s ease-in-out;
+    }
+
+    @media (width < 40em) and (prefers-reduced-motion) {
+      translate: 0;
+      opacity: 0;
+      transition: opacity 500ms ease-in-out;
+    }
+  }
+
   &__links {
-    margin: 0;
-    padding: 0;
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin: 0;
+    padding: 0;
 
     @media (width < 40em) {
       flex-direction: column;
@@ -67,10 +65,5 @@
 
   &__item {
     list-style-type: none;
-  }
-
-  &__link {
-    font-size: 1.5rem;
-    font-weight: 700;
   }
 }

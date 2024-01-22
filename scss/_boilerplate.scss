@@ -38,7 +38,7 @@ h2 {
   margin-block: 0;
 }
 
-h1 {
+h1 a {
   font-size: 2rem;
   font-size: clamp(2rem, 1.2857142857142856rem + 3.0476190476190474vw, 3rem);
   line-height: 0.8;
@@ -47,6 +47,8 @@ h1 {
 a,
 a:visited,
 a:active {
+  font-size: 1.5rem;
+  font-weight: 700;
   text-decoration: none;
   color: inherit;
 

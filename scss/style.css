@@ -44,7 +44,7 @@ h2 {
   margin-block: 0;
 }
 
-h1 {
+h1 a {
   font-size: 2rem;
   font-size: clamp(2rem, 1.2857142857rem + 3.0476190476vw, 3rem);
   line-height: 0.8;
@@ -53,6 +53,8 @@ h1 {
 a,
 a:visited,
 a:active {
+  font-size: 1.5rem;
+  font-weight: 700;
   text-decoration: none;
   color: inherit;
 }
@@ -85,7 +87,6 @@ a:active:hover {
   justify-content: space-between;
   align-items: center;
   padding-block: 1.5rem;
-  background-color: hsla(0, 0%, 0%, 0.75);
 }
 .topnav button {
   background: none;
@@ -105,23 +106,6 @@ a:active:hover {
     opacity: 1;
   }
 }
-@media (width < 40em) {
-  .topnav__menu {
-    position: fixed;
-    inset: 0;
-    background-color: hsl(254, 100%, 23%);
-    padding: 1.5rem;
-    translate: 100vw 0;
-    transition: translate 0.5s ease-in-out;
-  }
-}
-@media (prefers-reduced-motion) {
-  .topnav__menu {
-    translate: 0;
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
-  }
-}
 .topnav__close {
   display: block;
   margin-inline-start: auto;
@@ -130,12 +114,29 @@ a:active:hover {
 .topnav__close img {
   width: 2.5rem;
 }
+@media (width < 40em) {
+  .topnav__menu {
+    position: fixed;
+    inset: 0;
+    padding: 1.5rem;
+    background-color: hsl(256, 100%, 33%);
+    translate: 100vw 0;
+    transition: translate 0.5s ease-in-out;
+  }
+}
+@media (width < 40em) and (prefers-reduced-motion) {
+  .topnav__menu {
+    translate: 0;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+}
 .topnav__links {
-  margin: 0;
-  padding: 0;
   display: flex;
   gap: 1rem;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 @media (width < 40em) {
   .topnav__links {
@@ -144,8 +145,4 @@ a:active:hover {
 }
 .topnav__item {
   list-style-type: none;
-}
-.topnav__link {
-  font-size: 1.5rem;
-  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
