@@ -21,9 +21,6 @@ body {
   color: #ffffff;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-body:has(.topnav__open[aria-expanded=true]) {
-  overflow-y: hidden;
-}
 body::after {
   content: "";
   position: absolute;
